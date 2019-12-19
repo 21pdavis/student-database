@@ -1,0 +1,27 @@
+package objects;
+
+public class Person {
+	private String name;
+	
+	public Person() {
+		setName("");
+	}
+	
+	public Person(String nm) {
+		name = nm;
+	}
+	
+	public void setName(String nm) {
+		name = nm;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String print() {
+		return "Name: " + name;
+	}
+}
+
+
