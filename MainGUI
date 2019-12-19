@@ -1,0 +1,16 @@
+package GUIs;
+
+import javax.swing.*;
+import BreezySwing.*;
+
+@SuppressWarnings("unused")
+public class MainGUI extends GBFrame{
+	private JLabel welcomeLabel = addLabel("Welcome to the Student Database!", 1,1,1,1);
+	
+	public static void main(String[] args) {
+		JFrame frm = new JFrame();
+		frm.setTitle("Student Database");
+		frm.setSize(500, 500);
+		frm.setVisible(true);
+	}
+}
