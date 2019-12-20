@@ -1,0 +1,25 @@
+package GUIs;
+
+import javax.swing.*;
+import BreezySwing.*;
+import objects.*;
+
+@SuppressWarnings("serial")
+public class CreatePersonGUI extends GBDialog {
+	private Person[] people;
+	
+	public CreatePersonGUI(JFrame frm, Person[] people) {
+		super(frm);
+		setSize(400,500);
+		setTitle("Create a New Person");
+		this.people = people;
+	}
+	
+	public void buttonClicked(JButton buttonObj) {
+		
+	}
+	
+	public void resetFrame() {
+		
+	}
+}
