@@ -1,0 +1,25 @@
+package GUIs;
+
+import javax.swing.*;
+import BreezySwing.*;
+import objects.*;
+
+@SuppressWarnings("serial")
+public class DisplaysGUI extends GBDialog {
+	private Person[] people;
+	
+	public DisplaysGUI(JFrame frm, Person[] people) {
+		super(frm);
+		setSize(400,500);
+		setTitle("Displays Window");
+		this.people = people;
+	}
+	
+	public void buttonClicked(JButton buttonObj) {
+		
+	}
+	
+	public void resetFrame() {
+		
+	}
+}
