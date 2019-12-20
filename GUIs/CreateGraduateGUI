@@ -1,0 +1,25 @@
+package GUIs;
+
+import javax.swing.*;
+import BreezySwing.*;
+import objects.*;
+
+@SuppressWarnings("serial")
+public class CreateGradGUI extends GBDialog {
+	private Person[] people;
+	
+	public CreateGradGUI(JFrame frm, Person[] people) {
+		super(frm);
+		setSize(400,500);
+		setTitle("Create a New Graduate Student");
+		this.people = people;
+	}
+	
+	public void buttonClicked(JButton buttonObj) {
+		
+	}
+	
+	public void resetFrame() {
+		
+	}
+}
