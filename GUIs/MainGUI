@@ -2,13 +2,51 @@ package GUIs;
 
 import javax.swing.*;
 import BreezySwing.*;
+import objects.*;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({ "unused", "serial" })
 public class MainGUI extends GBFrame{
+	//variables and people array
+	private Person[] people = new Person[10];
+	//frames
+	private static JFrame frm = new MainGUI();
+	private  CreatePersonGUI createPersonGUI = new CreatePersonGUI(frm, people);
+	private CreateStudentGUI createStudentGUI = new CreateStudentGUI(frm, people);
+	private CreateUndergradGUI createUndergradGUI = new CreateUndergradGUI(frm, people);
+	private CreateGradGUI createGradGUI = new CreateGradGUI(frm, people);
+	private DisplaysGUI displaysGUI = new DisplaysGUI(frm, people);
+	//beginning of GUI elements
 	private JLabel welcomeLabel = addLabel("Welcome to the Student Database!", 1,1,1,1);
+	private JButton createPersonButton = addButton("Create a Generic Person", 2,1,1,1);
+	private JButton createStudentButton = addButton("Create a Student", 2,2,1,1);
+	private JButton createUndergradButton = addButton("Create an Undergraduate", 3,1,1,1);
+	private JButton createGradButton = addButton("Create a Graduate", 3,2,1,1);
+	private JButton displaysButton = addButton("Open the Displays Window", 4,1,1,1);
+	
+	public void buttonClicked(JButton button) {
+		if(button == createPersonButton) {
+			createPersonGUI.resetFrame();
+			createPersonGUI.setVisible(true);
+		}
+		if(button == createStudentButton) {
+			createStudentGUI.resetFrame();
+			createStudentGUI.setVisible(true);
+		}
+		if(button == createUndergradButton) {
+			createUndergradGUI.resetFrame();
+			createUndergradGUI.setVisible(true);
+		}
+		if(button == createGradButton) {
+			createGradGUI.resetFrame();
+			createGradGUI.setVisible(true);
+		}
+		if(button == displaysButton) {
+			createPersonGUI.resetFrame();
+			createPersonGUI.setVisible(true);
+		}
+	}
 	
 	public static void main(String[] args) {
-		JFrame frm = new JFrame();
 		frm.setTitle("Student Database");
 		frm.setSize(500, 500);
 		frm.setVisible(true);
