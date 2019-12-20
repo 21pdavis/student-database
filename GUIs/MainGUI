@@ -1,5 +1,9 @@
 package GUIs;
-
+/* Paul Davis
+ * Student Database Program
+ * Store and display people/different types of students
+ * Amount of classes is somewhat unnecessary, but wanted practice for larger program organization/package management
+ */
 import javax.swing.*;
 import BreezySwing.*;
 import objects.*;
