@@ -4,22 +4,52 @@ import javax.swing.*;
 import BreezySwing.*;
 import objects.*;
 
-@SuppressWarnings("serial")
+@SuppressWarnings({"serial", "unused"})
 public class CreateGradGUI extends GBDialog {
 	private Person[] people;
+	private int peopleCounter;
+	private JLabel nameInstructionsLabel = addLabel("Enter Name: ", 1,1,1,1);
+	private JTextField nameInputField = addTextField("", 1,2,1,1);
+	private JLabel idInstructionsLabel = addLabel("Enter Student ID", 2,1,1,1);
+	private IntegerField idInputField = addIntegerField(0, 2,2,1,1);
+	private JLabel majorInstructionsLabel = addLabel("Enter Major", 3,1,1,1);
+	private JTextField majorInputField = addTextField("", 3,2,1,1);
+	private JButton createGraduateButton = addButton("Create Graduate", 4,1,1,1);
+	private JButton exitButton = addButton("Exit", 4,2,1,1);
 	
-	public CreateGradGUI(JFrame frm, Person[] people) {
+	public CreateGradGUI(JFrame frm, Person[] people, int peopleCounter) {
 		super(frm);
-		setSize(400,500);
+		setSize(400,200);
 		setTitle("Create a New Graduate Student");
 		this.people = people;
+		this.peopleCounter = peopleCounter;
 	}
 	
 	public void buttonClicked(JButton buttonObj) {
-		
+		if(buttonObj == createGraduateButton) {
+			if(peopleCounter < 9) {
+				createGrad();
+				messageBox("Graduate student successfully created");
+				resetFrame();
+			}
+			else {
+				messageBox("Too many people already. Reset the program to input more");
+				resetFrame();
+			}
+		}
+		if(buttonObj == exitButton) {
+			setVisible(false);
+		}
+	}
+	
+	private void createGrad() {
+		people[peopleCounter] = new Graduate(nameInputField.getText(), idInputField.getNumber(), majorInputField.getText());
+		peopleCounter++;
 	}
 	
 	public void resetFrame() {
-		
+		nameInputField.setText("");
+		idInputField.setNumber(0);
+		majorInputField.setText("");
 	}
 }
